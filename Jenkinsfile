@@ -30,6 +30,8 @@ pipeline {
 
         stage('Deploy') {
             steps {
+                  bat "del /q /s C:\\inetpub\\wwwroot\\aj\\*"
+             bat "xcopy /E /Y /I dist\\aaruapp\\browser\\* c:\\inetpub\\wwwroot\\aj\\"
                 echo 'Deploying application...'
             }
         }
